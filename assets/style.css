@@ -1,8 +1,23 @@
+/* FONTES */
+
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
 
 @font-face {
   font-family: 'Adumu';
   src: url('fonts/Adumu.ttf');
+}
+
+/* VARIÁVEIS */
+
+:root{
+    --fonte-destaque: 'Adumu', sans-serif;
+    --fonte-principal: "Montserrat", sans-serif;
+
+    --cor-primaria: #F2A30F;
+    --cor-secundaria: #D96907;
+    --cor-destaque: #8C3604;
+    --cor-fundo: #e4e4e4;
+    --cor-texto: #0D0D0D;
 }
 
 * {
@@ -22,18 +37,18 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #e4e4e4;
+    background-color: var(--cor-fundo);
 }
 
 header {
     width: 100%;
     height: 100px;
-    background-color: #F2A30F;
+    background-color: var(--cor-primaria);
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 10px 100px;
-    color: #000;
+    color: var(--cor-texto);
     position: fixed;
     top: 0;
     left: 0;
@@ -56,10 +71,10 @@ header {
 }
 
 .logo h1 {
-    font-family: 'Adumu', sans-serif;
+    font-family: var(--fonte-destaque);
     font-weight: 400;
     font-style: normal;
-    color: #000;
+    color: var(--cor-texto);
     font-size: 4vh;
 }
 
@@ -80,16 +95,17 @@ header {
 
 .menu ul li a {
     padding: 10px 40px;
-    color: #000;
+    color: var(--cor-texto);
     text-decoration: none;
     font-size: 3vh;
-    font-family: 'Adumu', sans-serif;
+    font-family: var(--fonte-destaque);
     font-weight: 400;
     font-style: normal;
 }
 
 .menu ul li a:hover {
-    color: #8C3604;
+    color: var(--cor-destaque);
+    border-bottom: 3.5px solid var(--cor-destaque);
 }
 
 /* ----- SEÇÃO HOME ----- */
@@ -120,9 +136,9 @@ header {
 }
 
 .container_home h1 {
-    color: #fff;
+    color: var(--cor-fundo);
     font-size: 7vh;
-    font-family: "Adumu", sans-serif;
+    font-family: var(--fonte-destaque);
     font-weight: 400;
     font-style: normal;
 }
@@ -132,15 +148,15 @@ header {
 .row {
     width: 100%;
     height: 100vh;
-    background-color: #e4e4e4;
+    background-color: var(--cor-fundo);
     display: flex;
     justify-content: center;
 }
 
 .container h1{
-    color: #000;
+    color: var(--cor-texto);
     font-size: 7vh;
-    font-family: "Adumu", sans-serif;
+    font-family: var(--fonte-destaque);
     font-weight: 400;
     font-style: normal;
     display: flex;
@@ -157,29 +173,35 @@ header {
 .produto {
     width: 20%;
     height: 500px;
-    background-color: #D96907;
+    background-color: var(--cor-secundaria);
     border-radius: 10px;
     position: relative;
+    transition: transform 0.2s ease;
+}
+
+.produto:hover{
+    transform: scale(1.01);
+    box-shadow: 0 12px 12px rgba(33, 33, 33, 0.064)
 }
 
 .produto h2{
-    color: #000;
+    color: var(--cor-texto);
     font-size: 3.5vh;
-    font-family: "Adumu", sans-serif;
+    font-family: var(--fonte-destaque);
     font-weight: 400;
     font-style: normal;
 }
 
 .info p{
     padding-top: 20px;
-    color: #000;
+    color: var(--cor-texto);
     font-size: 2vh;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--fonte-principal);
 }
 
 .produto img{
     width: 100%;
-    height: 190px;
+    height: 38%;
     border-radius: 10px 10px 0 0;
 }
 
@@ -188,9 +210,9 @@ header {
     bottom: 0;
     height: 40px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 2.7vh;
     padding: 10px;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--fonte-principal);
 }
 
 /* ----- RODAPÉ ----- */
@@ -198,10 +220,11 @@ header {
 footer {
     width: 100%;
     height: 150px;
-    background-color: #F2A30F;
+    background-color: var(--cor-primaria);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 
 .col_rodape {
@@ -213,6 +236,10 @@ footer {
     flex-wrap: wrap;
 }
 
+.col_rodape:last-of-type{
+    padding: 20px 0;
+}
+
 .col_rodape img{
     width: 45px;
     height: 45px;
@@ -220,8 +247,8 @@ footer {
 }
 
 .col_rodape h2{
-    font-family: "Montserrat", sans-serif;
-    color: #000;
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
     font-size: 3vh;
 }
 
@@ -240,15 +267,15 @@ footer {
 }
 
 .logofooter h1 {
-    font-family: 'Adumu', sans-serif;
+    font-family: var(--fonte-destaque);
     font-weight: 400;
     font-style: normal;
-    color: #000;
+    color: var(--cor-texto);
     font-size: 5vh;
 }
 
 .contato{
-    height: 50px;
+    height: 50%;
     width: 100%;
     display: flex;
     align-items: center;
